@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlTypes;
@@ -15,7 +16,9 @@ namespace fiszki_komendy
         string connectionString = @"Server=DESKTOP-JMS3Q0H\SQLEXPRESS;Database=Fiszki;Trusted_Connection=True ;Encrypt=False";
 
 
-        public (string, string) Słowo() {
+        // można dodać kategorię przez wpisanie jej id,
+        //jak się nie poda id to będzie domyślnie los z wszystkich kategorii
+        public (string, string) losowanie_słowa(int kategoria = 0) {
             Console.WriteLine("hello");
             string ang_slowo = "xxx";
             string id_string = "sss";
@@ -24,10 +27,19 @@ namespace fiszki_komendy
                 // Tworzymy obiekt połączenia
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    string query;
+                    if (kategoria == 0)
+                    {
+                        query = "SELECT TOP 1 id, slowo FROM Fiszki ORDER BY NEWID();";
+                    }
+                    else
+                    {
+                        query = $"SELECT TOP 1 id, slowo FROM Fiszki where kategoriaID = {kategoria} ORDER BY NEWID();";
+                    }
                     connection.Open();
                     Console.WriteLine("Połączenie z bazą danych nawiązane!");
 
-                    string query = "SELECT TOP 1 id, slowo FROM Fiszki ORDER BY NEWID();";
+                    
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -106,6 +118,103 @@ namespace fiszki_komendy
             
 
         }
+
+
+        //generuje słownik z typami danych int i string, są to kategorie i ich id
+        public Dictionary<int, string> lista_kategorii()
+        {
+
+            Dictionary<int, string> kategorie = new Dictionary<int, string>();
+
+            try
+            {
+                // Tworzymy obiekt połączenia
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "select id,nazwa from kategorie";
+
+                    connection.Open();
+                    Console.WriteLine("Połączenie z bazą danych nawiązane!");
+
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+
+                        {
+                            while (reader.Read())
+                            {
+
+                                int id = reader.GetInt32(0);
+                                string nazwa = reader.GetString(1);
+                                kategorie.Add(id, nazwa);
+                                Console.WriteLine($"do bazy dodano {id},{nazwa}");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Błąd połączenia: {ex.Message}");
+            }
+
+
+
+            return kategorie;
+        }
+        
+
+
+
+
+        public string podaj_zdanie(string id)
+        {
+            string zdanie ="brak zdania";
+            Console.WriteLine($"id w funkcji podaj to {id}");
+            try
+            {
+                // Tworzymy obiekt połączenia
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = $"select ZdaniePrzyklad from fiszki where id={id}";
+
+                    connection.Open();
+                    Console.WriteLine("Połączenie z bazą danych nawiązane!");
+
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+
+                        {
+                            while (reader.Read())
+                            {
+                                zdanie = reader.GetString(0);
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Błąd połączenia: {ex.Message}");
+            }
+
+
+
+
+
+            return zdanie;
+        }
+
+
+
+
+
+
+
 
 
     }
