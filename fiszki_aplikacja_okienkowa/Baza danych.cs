@@ -16,8 +16,8 @@ namespace fiszki_aplikacja_okienkowa
         public (string, string) losowanie_słowa(int kategoria = 0)
         {
 
-            string ang_slowo = "xxx";
-            string id_string = "sss";
+            string ang_slowo = "";
+            string id_string = "";
             try
             {
                 // Tworzymy obiekt połączenia
