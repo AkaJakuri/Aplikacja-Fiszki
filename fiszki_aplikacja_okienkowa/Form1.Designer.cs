@@ -40,14 +40,16 @@
             label_podtytol = new Label();
             label_stopka = new Label();
             label1 = new Label();
+            buttonDodajFiszke = new Button();
             SuspendLayout();
             // 
             // los_slowa
             // 
             los_slowa.Font = new Font("Segoe UI", 13F);
-            los_slowa.Location = new Point(306, 211);
+            los_slowa.Location = new Point(353, 193);
+            los_slowa.Margin = new Padding(3, 4, 3, 4);
             los_slowa.Name = "los_slowa";
-            los_slowa.Size = new Size(163, 42);
+            los_slowa.Size = new Size(186, 56);
             los_slowa.TabIndex = 0;
             los_slowa.Text = "wylosuj słowo";
             los_slowa.UseVisualStyleBackColor = true;
@@ -58,27 +60,29 @@
             wylosowane_slowo.AutoSize = true;
             wylosowane_slowo.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 238);
             wylosowane_slowo.ForeColor = Color.Black;
-            wylosowane_slowo.Location = new Point(306, 166);
+            wylosowane_slowo.Location = new Point(333, 150);
             wylosowane_slowo.Name = "wylosowane_slowo";
-            wylosowane_slowo.Size = new Size(177, 28);
+            wylosowane_slowo.Size = new Size(225, 35);
             wylosowane_slowo.TabIndex = 1;
             wylosowane_slowo.Text = "wylosowane_slowo";
             // 
             // tlumaczenie
             // 
             tlumaczenie.Font = new Font("Segoe UI", 13F);
-            tlumaczenie.Location = new Point(278, 259);
+            tlumaczenie.Location = new Point(320, 257);
+            tlumaczenie.Margin = new Padding(3, 4, 3, 4);
             tlumaczenie.Name = "tlumaczenie";
             tlumaczenie.PlaceholderText = "tu wpisać tłumaczenie";
-            tlumaczenie.Size = new Size(220, 31);
+            tlumaczenie.Size = new Size(251, 36);
             tlumaczenie.TabIndex = 2;
             // 
             // sprawdzanie
             // 
             sprawdzanie.Font = new Font("Segoe UI", 13F);
-            sprawdzanie.Location = new Point(319, 300);
+            sprawdzanie.Location = new Point(372, 301);
+            sprawdzanie.Margin = new Padding(3, 4, 3, 4);
             sprawdzanie.Name = "sprawdzanie";
-            sprawdzanie.Size = new Size(128, 33);
+            sprawdzanie.Size = new Size(146, 44);
             sprawdzanie.TabIndex = 3;
             sprawdzanie.Text = "sprawdź tłumaczenie";
             sprawdzanie.UseVisualStyleBackColor = true;
@@ -88,26 +92,28 @@
             // 
             poprawnosc.AutoSize = true;
             poprawnosc.Font = new Font("Segoe UI", 13F);
-            poprawnosc.Location = new Point(319, 336);
+            poprawnosc.Location = new Point(365, 356);
             poprawnosc.Name = "poprawnosc";
-            poprawnosc.Size = new Size(126, 25);
+            poprawnosc.Size = new Size(153, 30);
             poprawnosc.TabIndex = 4;
             poprawnosc.Text = "czy poprawnie";
             // 
             // comboBoxKategoria
             // 
             comboBoxKategoria.FormattingEnabled = true;
-            comboBoxKategoria.Location = new Point(61, 166);
+            comboBoxKategoria.Location = new Point(70, 221);
+            comboBoxKategoria.Margin = new Padding(3, 4, 3, 4);
             comboBoxKategoria.Name = "comboBoxKategoria";
-            comboBoxKategoria.Size = new Size(121, 23);
+            comboBoxKategoria.Size = new Size(138, 28);
             comboBoxKategoria.TabIndex = 5;
             // 
             // button_podpowiedz
             // 
             button_podpowiedz.Font = new Font("Segoe UI", 13F);
-            button_podpowiedz.Location = new Point(514, 259);
+            button_podpowiedz.Location = new Point(372, 441);
+            button_podpowiedz.Margin = new Padding(3, 4, 3, 4);
             button_podpowiedz.Name = "button_podpowiedz";
-            button_podpowiedz.Size = new Size(135, 31);
+            button_podpowiedz.Size = new Size(146, 41);
             button_podpowiedz.TabIndex = 6;
             button_podpowiedz.Text = "podpowiedz";
             button_podpowiedz.UseVisualStyleBackColor = true;
@@ -117,9 +123,9 @@
             // 
             label_podpowiedz.AutoSize = true;
             label_podpowiedz.Font = new Font("Segoe UI", 13F);
-            label_podpowiedz.Location = new Point(514, 300);
+            label_podpowiedz.Location = new Point(372, 486);
             label_podpowiedz.Name = "label_podpowiedz";
-            label_podpowiedz.Size = new Size(112, 25);
+            label_podpowiedz.Size = new Size(134, 30);
             label_podpowiedz.TabIndex = 7;
             label_podpowiedz.Text = "podpowiedz";
             // 
@@ -127,9 +133,9 @@
             // 
             label_tytol.AutoSize = true;
             label_tytol.Font = new Font("Segoe UI", 20F);
-            label_tytol.Location = new Point(345, 9);
+            label_tytol.Location = new Point(394, 12);
             label_tytol.Name = "label_tytol";
-            label_tytol.Size = new Size(75, 37);
+            label_tytol.Size = new Size(93, 46);
             label_tytol.TabIndex = 8;
             label_tytol.Text = "fiszki";
             // 
@@ -137,9 +143,9 @@
             // 
             label_podtytol.AutoSize = true;
             label_podtytol.Font = new Font("Segoe UI", 15F);
-            label_podtytol.Location = new Point(241, 46);
+            label_podtytol.Location = new Point(275, 61);
             label_podtytol.Name = "label_podtytol";
-            label_podtytol.Size = new Size(318, 28);
+            label_podtytol.Size = new Size(406, 35);
             label_podtytol.TabIndex = 9;
             label_podtytol.Text = "tłumaczenie z angielsiego na polski";
             // 
@@ -147,9 +153,9 @@
             // 
             label_stopka.AutoSize = true;
             label_stopka.Font = new Font("Segoe UI", 10F);
-            label_stopka.Location = new Point(2, 426);
+            label_stopka.Location = new Point(2, 568);
             label_stopka.Name = "label_stopka";
-            label_stopka.Size = new Size(602, 19);
+            label_stopka.Size = new Size(756, 23);
             label_stopka.TabIndex = 10;
             label_stopka.Text = "aplikacja do nauki języka angielskiego przez sprawdzanie znajomości tłumaczenia angielskich słów\r\n";
             // 
@@ -157,18 +163,29 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13F);
-            label1.Location = new Point(47, 138);
+            label1.Location = new Point(48, 187);
             label1.Name = "label1";
-            label1.Size = new Size(158, 25);
+            label1.Size = new Size(192, 30);
             label1.TabIndex = 11;
             label1.Text = "wybrana kategoria";
             // 
+            // buttonDodajFiszke
+            // 
+            buttonDodajFiszke.Location = new Point(712, 512);
+            buttonDodajFiszke.Name = "buttonDodajFiszke";
+            buttonDodajFiszke.Size = new Size(146, 29);
+            buttonDodajFiszke.TabIndex = 12;
+            buttonDodajFiszke.Text = "dodaj fiszkę";
+            buttonDodajFiszke.UseVisualStyleBackColor = true;
+            buttonDodajFiszke.Click += buttonDodajFiszke_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Controls.Add(buttonDodajFiszke);
             Controls.Add(label1);
             Controls.Add(label_stopka);
             Controls.Add(label_podtytol);
@@ -181,6 +198,7 @@
             Controls.Add(tlumaczenie);
             Controls.Add(wylosowane_slowo);
             Controls.Add(los_slowa);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -201,5 +219,6 @@
         private Label label_podtytol;
         private Label label_stopka;
         private Label label1;
+        private Button buttonDodajFiszke;
     }
 }
