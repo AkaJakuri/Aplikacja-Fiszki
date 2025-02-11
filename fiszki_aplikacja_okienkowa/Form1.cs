@@ -80,6 +80,10 @@ namespace fiszki_aplikacja_okienkowa
             label_podpowiedz.Text = zdanie;
         }
 
-
+        private void buttonDodajFiszke_Click(object sender, EventArgs e)
+        {
+            FormDodajFiszke oknoDodawania = new FormDodajFiszke();
+            oknoDodawania.ShowDialog();
+        }
     }
 }

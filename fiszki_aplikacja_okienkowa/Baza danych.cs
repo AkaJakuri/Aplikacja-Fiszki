@@ -8,7 +8,7 @@ namespace fiszki_aplikacja_okienkowa
 {
     internal class Baza_danych
     {
-        string connectionString = @"Server=DESKTOP-JMS3Q0H\SQLEXPRESS;Database=Fiszki;Trusted_Connection=True ;Encrypt=False";
+        string connectionString = @"Server=JAKURI\SQLEXPRESS;Database=Fiszki;Trusted_Connection=True ;Encrypt=False";
 
 
         // można dodać kategorię przez wpisanie jej id,
