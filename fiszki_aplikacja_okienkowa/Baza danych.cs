@@ -8,7 +8,7 @@ namespace fiszki_aplikacja_okienkowa
 {
     internal class Baza_danych
     {
-        string connectionString = @"Server=JAKURI\SQLEXPRESS;Database=Fiszki;Trusted_Connection=True ;Encrypt=False";
+        string connectionString = @"Server=DESKTOP-JMS3Q0H\SQLEXPRESS;Database=Fiszki;Trusted_Connection=True ;Encrypt=False";
 
 
         // można dodać kategorię przez wpisanie jej id,
@@ -20,7 +20,7 @@ namespace fiszki_aplikacja_okienkowa
             string id_string = "";
             try
             {
-                // Tworzymy obiekt połączenia
+                
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string query;
@@ -72,7 +72,7 @@ namespace fiszki_aplikacja_okienkowa
             string tlumaczenie = "";
             try
             {
-                // Tworzymy obiekt połączenia
+                
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -128,7 +128,7 @@ namespace fiszki_aplikacja_okienkowa
 
             try
             {
-                // Tworzymy obiekt połączenia
+                
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string query = "select id,nazwa from kategorie";
@@ -219,7 +219,7 @@ namespace fiszki_aplikacja_okienkowa
         {
             try
             {
-                // Tworzymy obiekt połączenia
+                
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string query = $"INSERT INTO Fiszki " +
